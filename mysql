@@ -1,0 +1,3 @@
+CREATE TABLE cor(id_cor integer auto_increment primary key, nome_cor varchar(100));
+CREATE TABLE marca(id_marca integer auto_increment primary key, nome_marca varchar(100), cnpj varchar(100), rua varchar(150), bairro varchar(100), numero integer, telefone varchar(50), email varchar(50));
+CREATE TABLE veiculos(id integer auto_increment primary key, nome_marca integer not null, foreign key (nome_marca) REFERENCES marca(id_marca) ON UPDATE CASCADE ON DELETE NO ACTION, placa varchar(50), chassi varchar(50), numero_portas integer, nome_cor integer not null, foreign key (nome_cor) REFERENCES cor(id_cor) ON UPDATE CASCADE ON DELETE NO ACTION);
